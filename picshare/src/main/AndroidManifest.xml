@@ -1,0 +1,31 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="ch.liip.picshare">
+  <application>
+
+      <activity
+          android:name="ch.liip.picshare.sharing.SharingActivity"
+          android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+
+      <activity
+          android:name="ch.liip.picshare.screens.PreviewActivity"
+          android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+          android:screenOrientation="portrait"/>
+
+      <activity
+          android:name="com.yalantis.ucrop.UCropActivity"
+          android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+          android:screenOrientation="portrait"/>
+
+      <provider
+          android:name="ch.liip.picshare.sharing.SharingFileProvider"
+          android:authorities="${applicationId}.ch.liip.picshare.provider"
+          android:exported="false"
+          android:grantUriPermissions="true"
+          android:writePermission="false">
+
+          <meta-data
+              android:name="android.support.FILE_PROVIDER_PATHS"
+              android:resource="@xml/fileprovider" />
+      </provider>
+  </application>
+</manifest>
